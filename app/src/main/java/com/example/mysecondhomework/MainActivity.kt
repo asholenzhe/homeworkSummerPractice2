@@ -16,15 +16,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater).also {
             setContentView(it.root)
         }
-
         controller = (supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment)
             .navController
-
         controller?.let { navController ->
             binding?.bottomNavigation?.setupWithNavController(navController)
         }
     }
-
     override fun onBackPressed() {
         super.onBackPressed()
 
